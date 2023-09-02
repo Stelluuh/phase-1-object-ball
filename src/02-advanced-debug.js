@@ -78,3 +78,22 @@ function teamNames () {
 }
 
 console.log('teamName function:', teamNames())
+
+
+function playerNumbers(team) {
+  const game = gameObject()
+  const jerseyNumbers = []
+
+  for(let teamKey in game){
+    const {players, teamName} = game[teamKey]
+    if(teamName === team){
+      for(let player in players){
+        let playerNumber = players[player].number
+        jerseyNumbers.push(playerNumber)
+      }
+    }
+  }
+  return jerseyNumbers
+}
+
+console.log('playerNubmers function:', playerNumbers("Charlotte Hornets"))
