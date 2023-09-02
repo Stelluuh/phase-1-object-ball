@@ -97,3 +97,19 @@ function playerNumbers(team) {
 }
 
 console.log('playerNubmers function:', playerNumbers("Charlotte Hornets"))
+
+
+function playerStats(playerName) {
+  let game = gameObject()
+  let playerObj
+
+  for(let teamKey in game){
+    let teamObj = game[teamKey]
+    if(teamObj.players[playerName]){
+      playerObj = teamObj.players[playerName]
+    }
+  }
+  return playerObj
+}
+
+console.log('playerStats function: ', playerStats('Brook Lopez'))
