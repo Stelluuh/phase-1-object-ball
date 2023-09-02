@@ -46,3 +46,18 @@ function numPointsScored(playerName){
   }
   return requestedPoints
 }
+
+
+function shoeSize (playerName){
+  let game = gameObject()
+  let playerObj
+  for (let teamKey in game){
+    let teamObj = game[teamKey]
+    playerObj = teamObj.players[playerName] ? teamObj.players[playerName] : playerObj
+  }
+
+  
+  return playerObj.shoe
+}
+
+shoeSize("Alan Anderson")
