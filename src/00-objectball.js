@@ -117,4 +117,4 @@ const gameObject = () => {
     }
 }
 
-console.log(gameObject())
+console.log('gameObject function: ', gameObject())

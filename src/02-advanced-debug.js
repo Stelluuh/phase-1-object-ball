@@ -47,6 +47,8 @@ function numPointsScored(playerName){
   return requestedPoints
 }
 
+console.log('numPointsScored function: ', numPointsScored('Ben Gordon'))
+
 
 function shoeSize (playerName){
   let game = gameObject()
@@ -55,9 +57,24 @@ function shoeSize (playerName){
     let teamObj = game[teamKey]
     playerObj = teamObj.players[playerName] ? teamObj.players[playerName] : playerObj
   }
-
-  
   return playerObj.shoe
 }
 
-shoeSize("Alan Anderson")
+console.log('shoeSize function: ', shoeSize("Alan Anderson"))
+
+function teamColors(teamName) {
+  const game = gameObject() 
+
+  for(let teamKey in game){
+    if(game[teamKey].teamName === teamName){
+      return game[teamKey].colors
+    }
+  }
+}
+
+function teamNames () {
+  const game = gameObject()
+  return [game.away.teamName, game.home.teamName]
+}
+
+console.log('teamName function:', teamNames())
